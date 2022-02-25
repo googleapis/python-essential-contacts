@@ -10,8 +10,8 @@
           "shortName": "ComputeContacts"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_compute_contacts_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_ComputeContacts_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_compute_contacts_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_async",
       "segments": [
         {
           "end": 45,
@@ -54,8 +54,8 @@
           "shortName": "ComputeContacts"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_compute_contacts_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_ComputeContacts_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_compute_contacts_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_sync",
       "segments": [
         {
           "end": 45,
@@ -99,8 +99,8 @@
           "shortName": "CreateContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_create_contact_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_CreateContact_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_create_contact_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async",
       "segments": [
         {
           "end": 44,
@@ -143,8 +143,8 @@
           "shortName": "CreateContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_create_contact_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_CreateContact_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_create_contact_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_CreateContact_sync",
       "segments": [
         {
           "end": 44,
@@ -188,8 +188,8 @@
           "shortName": "DeleteContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_delete_contact_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_DeleteContact_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_delete_contact_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async",
       "segments": [
         {
           "end": 42,
@@ -230,8 +230,8 @@
           "shortName": "DeleteContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_delete_contact_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_DeleteContact_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_delete_contact_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_sync",
       "segments": [
         {
           "end": 42,
@@ -273,8 +273,8 @@
           "shortName": "GetContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_get_contact_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_GetContact_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_get_contact_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_GetContact_async",
       "segments": [
         {
           "end": 44,
@@ -317,8 +317,8 @@
           "shortName": "GetContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_get_contact_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_GetContact_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_get_contact_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_GetContact_sync",
       "segments": [
         {
           "end": 44,
@@ -362,8 +362,8 @@
           "shortName": "ListContacts"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_list_contacts_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_ListContacts_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_list_contacts_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_ListContacts_async",
       "segments": [
         {
           "end": 45,
@@ -406,8 +406,8 @@
           "shortName": "ListContacts"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_list_contacts_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_ListContacts_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_list_contacts_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_ListContacts_sync",
       "segments": [
         {
           "end": 45,
@@ -451,8 +451,8 @@
           "shortName": "SendTestMessage"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_send_test_message_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_SendTestMessage_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_send_test_message_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_async",
       "segments": [
         {
           "end": 44,
@@ -493,8 +493,8 @@
           "shortName": "SendTestMessage"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_send_test_message_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_SendTestMessage_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_send_test_message_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_sync",
       "segments": [
         {
           "end": 44,
@@ -536,8 +536,8 @@
           "shortName": "UpdateContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_update_contact_async.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_UpdateContact_async",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_update_contact_async.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async",
       "segments": [
         {
           "end": 43,
@@ -580,8 +580,8 @@
           "shortName": "UpdateContact"
         }
       },
-      "file": "essentialcontacts_generated_essential_contacts_v1_essential_contacts_service_update_contact_sync.py",
-      "regionTag": "essentialcontacts_generated_essential_contacts_v1_EssentialContactsService_UpdateContact_sync",
+      "file": "essentialcontacts_v1_generated_essential_contacts_service_update_contact_sync.py",
+      "regionTag": "essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_sync",
       "segments": [
         {
           "end": 43,

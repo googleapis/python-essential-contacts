@@ -224,7 +224,7 @@ class EssentialContactsServiceAsyncClient:
     ) -> service.Contact:
         r"""Adds a new contact for a resource.
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -328,7 +328,7 @@ class EssentialContactsServiceAsyncClient:
         Note: A contact's email address cannot be changed.
 
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -431,7 +431,7 @@ class EssentialContactsServiceAsyncClient:
     ) -> pagers.ListContactsAsyncPager:
         r"""Lists the contacts that have been set on a resource.
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -541,7 +541,7 @@ class EssentialContactsServiceAsyncClient:
     ) -> service.Contact:
         r"""Gets a single contact.
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -642,7 +642,7 @@ class EssentialContactsServiceAsyncClient:
     ) -> None:
         r"""Deletes a contact.
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -726,7 +726,7 @@ class EssentialContactsServiceAsyncClient:
         including contacts inherited from any parent resources.
 
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
@@ -806,7 +806,7 @@ class EssentialContactsServiceAsyncClient:
         contact to verify that it has been configured correctly.
 
 
-        .. code-block::
+        .. code-block:: python
 
             from google.cloud import essential_contacts_v1
 
