@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://github.com/googleapis/python-essential-contacts/compare/v0.4.0...v0.4.1) (2022-04-01)
+
+
+### Bug Fixes
+
+* **deps:** require google-api-core >= 1.31.5, >= 2.3.2 on v0 release ([#96](https://github.com/googleapis/python-essential-contacts/issues/96)) ([1973650](https://github.com/googleapis/python-essential-contacts/commit/1973650bc27bca1b6fdb96f566454870631353d5))
+
 ## [0.4.0](https://www.github.com/googleapis/python-essential-contacts/compare/v0.3.0...v0.4.0) (2021-10-18)
 
 
