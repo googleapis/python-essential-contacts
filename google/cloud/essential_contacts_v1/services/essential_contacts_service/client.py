@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -440,7 +440,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_create_contact():
                 # Create a client
@@ -549,7 +549,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_update_contact():
                 # Create a client
@@ -657,7 +657,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_list_contacts():
                 # Create a client
@@ -766,7 +766,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_get_contact():
                 # Create a client
@@ -863,7 +863,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_delete_contact():
                 # Create a client
@@ -950,7 +950,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_compute_contacts():
                 # Create a client
@@ -1039,7 +1039,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         .. code-block:: python
 
-            from google.cloud import essential_contacts_v1
+                    from google.cloud import essential_contacts_v1
 
             def sample_send_test_message():
                 # Create a client
