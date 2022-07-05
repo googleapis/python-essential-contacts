@@ -2833,7 +2833,6 @@ def test_essential_contacts_service_transport_auth_adc(transport_class):
     [
         transports.EssentialContactsServiceGrpcTransport,
         transports.EssentialContactsServiceGrpcAsyncIOTransport,
-        transports.EssentialContactsServiceRestTransport,
     ],
 )
 def test_essential_contacts_service_transport_auth_gdch_credentials(transport_class):
