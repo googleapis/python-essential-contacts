@@ -3,7 +3,7 @@ Python Client for Essential Contacts API API
 
 |stable| |pypi| |versions|
 
-`Essential Contacts API API`_: 
+`Essential Contacts API API`_: helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
