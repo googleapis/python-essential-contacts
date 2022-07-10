@@ -1,6 +1,6 @@
 {
     "name": "essentialcontacts",
-    "name_pretty": "Essential Contacts API",
+    "name_pretty": "Essential Contacts",
     "product_documentation": "https://cloud.google.com/resource-manager/docs/managing-notification-contacts/",
     "client_documentation": "https://cloud.google.com/python/docs/reference/essentialcontacts/latest",
     "issue_tracker": "",
