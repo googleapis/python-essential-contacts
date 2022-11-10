@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 
 from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
@@ -63,7 +74,7 @@ class EssentialContactsServiceClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[EssentialContactsServiceTransport]:
         """Returns an appropriate transport class.
 
@@ -333,7 +344,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, EssentialContactsServiceTransport, None] = None,
+        transport: Optional[Union[str, EssentialContactsServiceTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -431,12 +442,12 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def create_contact(
         self,
-        request: Union[service.CreateContactRequest, dict] = None,
+        request: Optional[Union[service.CreateContactRequest, dict]] = None,
         *,
-        parent: str = None,
-        contact: service.Contact = None,
+        parent: Optional[str] = None,
+        contact: Optional[service.Contact] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> service.Contact:
         r"""Adds a new contact for a resource.
@@ -545,12 +556,12 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def update_contact(
         self,
-        request: Union[service.UpdateContactRequest, dict] = None,
+        request: Optional[Union[service.UpdateContactRequest, dict]] = None,
         *,
-        contact: service.Contact = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        contact: Optional[service.Contact] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> service.Contact:
         r"""Updates a contact.
@@ -662,11 +673,11 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def list_contacts(
         self,
-        request: Union[service.ListContactsRequest, dict] = None,
+        request: Optional[Union[service.ListContactsRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListContactsPager:
         r"""Lists the contacts that have been set on a resource.
@@ -778,11 +789,11 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def get_contact(
         self,
-        request: Union[service.GetContactRequest, dict] = None,
+        request: Optional[Union[service.GetContactRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> service.Contact:
         r"""Gets a single contact.
@@ -882,11 +893,11 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def delete_contact(
         self,
-        request: Union[service.DeleteContactRequest, dict] = None,
+        request: Optional[Union[service.DeleteContactRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes a contact.
@@ -974,10 +985,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def compute_contacts(
         self,
-        request: Union[service.ComputeContactsRequest, dict] = None,
+        request: Optional[Union[service.ComputeContactsRequest, dict]] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ComputeContactsPager:
         r"""Lists all contacts for the resource that are
@@ -1070,10 +1081,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
     def send_test_message(
         self,
-        request: Union[service.SendTestMessageRequest, dict] = None,
+        request: Optional[Union[service.SendTestMessageRequest, dict]] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Allows a contact admin to send a test message to
