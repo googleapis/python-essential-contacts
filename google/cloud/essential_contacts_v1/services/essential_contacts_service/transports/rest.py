@@ -14,24 +14,21 @@
 # limitations under the License.
 #
 
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import rest_streaming
-from google.api_core import path_template
-from google.api_core import gapic_v1
-
-from google.protobuf import json_format
-from requests import __version__ as requests_version
 import dataclasses
+import json  # type: ignore
 import re
 from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
+
+from google.api_core import gapic_v1, path_template, rest_helpers, rest_streaming
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+from google.protobuf import json_format
+import grpc  # type: ignore
+from requests import __version__ as requests_version
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -39,11 +36,12 @@ except AttributeError:  # pragma: NO COVER
     OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
 
-from google.cloud.essential_contacts_v1.types import service
 from google.protobuf import empty_pb2  # type: ignore
 
-from .base import EssentialContactsServiceTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from google.cloud.essential_contacts_v1.types import service
 
+from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from .base import EssentialContactsServiceTransport
 
 DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     gapic_version=BASE_DEFAULT_CLIENT_INFO.gapic_version,
@@ -120,7 +118,12 @@ class EssentialContactsServiceRestInterceptor:
 
 
     """
-    def pre_compute_contacts(self, request: service.ComputeContactsRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.ComputeContactsRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_compute_contacts(
+        self,
+        request: service.ComputeContactsRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[service.ComputeContactsRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for compute_contacts
 
         Override in a subclass to manipulate the request or metadata
@@ -128,7 +131,9 @@ class EssentialContactsServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_compute_contacts(self, response: service.ComputeContactsResponse) -> service.ComputeContactsResponse:
+    def post_compute_contacts(
+        self, response: service.ComputeContactsResponse
+    ) -> service.ComputeContactsResponse:
         """Post-rpc interceptor for compute_contacts
 
         Override in a subclass to manipulate the response
@@ -136,7 +141,10 @@ class EssentialContactsServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_create_contact(self, request: service.CreateContactRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.CreateContactRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_contact(
+        self, request: service.CreateContactRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[service.CreateContactRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_contact
 
         Override in a subclass to manipulate the request or metadata
@@ -152,7 +160,10 @@ class EssentialContactsServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_contact(self, request: service.DeleteContactRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.DeleteContactRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_contact(
+        self, request: service.DeleteContactRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[service.DeleteContactRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_contact
 
         Override in a subclass to manipulate the request or metadata
@@ -160,7 +171,9 @@ class EssentialContactsServiceRestInterceptor:
         """
         return request, metadata
 
-    def pre_get_contact(self, request: service.GetContactRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.GetContactRequest, Sequence[Tuple[str, str]]]:
+    def pre_get_contact(
+        self, request: service.GetContactRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[service.GetContactRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_contact
 
         Override in a subclass to manipulate the request or metadata
@@ -176,7 +189,10 @@ class EssentialContactsServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_contacts(self, request: service.ListContactsRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.ListContactsRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_list_contacts(
+        self, request: service.ListContactsRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[service.ListContactsRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for list_contacts
 
         Override in a subclass to manipulate the request or metadata
@@ -184,7 +200,9 @@ class EssentialContactsServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_list_contacts(self, response: service.ListContactsResponse) -> service.ListContactsResponse:
+    def post_list_contacts(
+        self, response: service.ListContactsResponse
+    ) -> service.ListContactsResponse:
         """Post-rpc interceptor for list_contacts
 
         Override in a subclass to manipulate the response
@@ -192,7 +210,12 @@ class EssentialContactsServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_send_test_message(self, request: service.SendTestMessageRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.SendTestMessageRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_send_test_message(
+        self,
+        request: service.SendTestMessageRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[service.SendTestMessageRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for send_test_message
 
         Override in a subclass to manipulate the request or metadata
@@ -200,7 +223,9 @@ class EssentialContactsServiceRestInterceptor:
         """
         return request, metadata
 
-    def pre_update_contact(self, request: service.UpdateContactRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[service.UpdateContactRequest, Sequence[Tuple[str, str]]]:
+    def pre_update_contact(
+        self, request: service.UpdateContactRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[service.UpdateContactRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_contact
 
         Override in a subclass to manipulate the request or metadata
@@ -238,20 +263,21 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
     """
 
-    def __init__(self, *,
-            host: str = 'essentialcontacts.googleapis.com',
-            credentials: Optional[ga_credentials.Credentials] = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            client_cert_source_for_mtls: Optional[Callable[[
-                ], Tuple[bytes, bytes]]] = None,
-            quota_project_id: Optional[str] = None,
-            client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
-            always_use_jwt_access: Optional[bool] = False,
-            url_scheme: str = 'https',
-            interceptor: Optional[EssentialContactsServiceRestInterceptor] = None,
-            api_audience: Optional[str] = None,
-            ) -> None:
+    def __init__(
+        self,
+        *,
+        host: str = "essentialcontacts.googleapis.com",
+        credentials: Optional[ga_credentials.Credentials] = None,
+        credentials_file: Optional[str] = None,
+        scopes: Optional[Sequence[str]] = None,
+        client_cert_source_for_mtls: Optional[Callable[[], Tuple[bytes, bytes]]] = None,
+        quota_project_id: Optional[str] = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+        always_use_jwt_access: Optional[bool] = False,
+        url_scheme: str = "https",
+        interceptor: Optional[EssentialContactsServiceRestInterceptor] = None,
+        api_audience: Optional[str] = None,
+    ) -> None:
         """Instantiate the transport.
 
         Args:
@@ -290,7 +316,9 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         # credentials object
         maybe_url_match = re.match("^(?P<scheme>http(?:s)?://)?(?P<host>.*)$", host)
         if maybe_url_match is None:
-            raise ValueError(f"Unexpected hostname structure: {host}")  # pragma: NO COVER
+            raise ValueError(
+                f"Unexpected hostname structure: {host}"
+            )  # pragma: NO COVER
 
         url_match_items = maybe_url_match.groupdict()
 
@@ -301,10 +329,11 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
             credentials=credentials,
             client_info=client_info,
             always_use_jwt_access=always_use_jwt_access,
-            api_audience=api_audience
+            api_audience=api_audience,
         )
         self._session = AuthorizedSession(
-            self._credentials, default_host=self.DEFAULT_HOST)
+            self._credentials, default_host=self.DEFAULT_HOST
+        )
         if client_cert_source_for_mtls:
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._interceptor = interceptor or EssentialContactsServiceRestInterceptor()
@@ -314,19 +343,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("ComputeContacts")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.ComputeContactsRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> service.ComputeContactsResponse:
+        def __call__(
+            self,
+            request: service.ComputeContactsRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> service.ComputeContactsResponse:
             r"""Call the compute contacts method over HTTP.
 
             Args:
@@ -347,45 +381,50 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{parent=projects/*}/contacts:compute',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{parent=folders/*}/contacts:compute',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{parent=organizations/*}/contacts:compute',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=projects/*}/contacts:compute",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=folders/*}/contacts:compute",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=organizations/*}/contacts:compute",
+                },
             ]
-            request, metadata = self._interceptor.pre_compute_contacts(request, metadata)
+            request, metadata = self._interceptor.pre_compute_contacts(
+                request, metadata
+            )
             pb_request = service.ComputeContactsRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -404,19 +443,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("CreateContact")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.CreateContactRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> service.Contact:
+        def __call__(
+            self,
+            request: service.CreateContactRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> service.Contact:
             r"""Call the create contact method over HTTP.
 
             Args:
@@ -437,21 +481,22 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=projects/*}/contacts',
-                'body': 'contact',
-            },
-{
-                'method': 'post',
-                'uri': '/v1/{parent=folders/*}/contacts',
-                'body': 'contact',
-            },
-{
-                'method': 'post',
-                'uri': '/v1/{parent=organizations/*}/contacts',
-                'body': 'contact',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=projects/*}/contacts",
+                    "body": "contact",
+                },
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=folders/*}/contacts",
+                    "body": "contact",
+                },
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=organizations/*}/contacts",
+                    "body": "contact",
+                },
             ]
             request, metadata = self._interceptor.pre_create_contact(request, metadata)
             pb_request = service.CreateContactRequest.pb(request)
@@ -460,33 +505,35 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -505,19 +552,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("DeleteContact")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.DeleteContactRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ):
+        def __call__(
+            self,
+            request: service.DeleteContactRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ):
             r"""Call the delete contact method over HTTP.
 
             Args:
@@ -532,45 +584,48 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
                     sent along with the request as metadata.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=projects/*/contacts/*}',
-            },
-{
-                'method': 'delete',
-                'uri': '/v1/{name=folders/*/contacts/*}',
-            },
-{
-                'method': 'delete',
-                'uri': '/v1/{name=organizations/*/contacts/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=projects/*/contacts/*}",
+                },
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=folders/*/contacts/*}",
+                },
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=organizations/*/contacts/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_delete_contact(request, metadata)
             pb_request = service.DeleteContactRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -581,19 +636,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("GetContact")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.GetContactRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> service.Contact:
+        def __call__(
+            self,
+            request: service.GetContactRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> service.Contact:
             r"""Call the get contact method over HTTP.
 
             Args:
@@ -614,45 +674,48 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=projects/*/contacts/*}',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{name=folders/*/contacts/*}',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{name=organizations/*/contacts/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=projects/*/contacts/*}",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=folders/*/contacts/*}",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=organizations/*/contacts/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_get_contact(request, metadata)
             pb_request = service.GetContactRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -671,19 +734,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("ListContacts")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.ListContactsRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> service.ListContactsResponse:
+        def __call__(
+            self,
+            request: service.ListContactsRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> service.ListContactsResponse:
             r"""Call the list contacts method over HTTP.
 
             Args:
@@ -704,45 +772,48 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{parent=projects/*}/contacts',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{parent=folders/*}/contacts',
-            },
-{
-                'method': 'get',
-                'uri': '/v1/{parent=organizations/*}/contacts',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=projects/*}/contacts",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=folders/*}/contacts",
+                },
+                {
+                    "method": "get",
+                    "uri": "/v1/{parent=organizations/*}/contacts",
+                },
             ]
             request, metadata = self._interceptor.pre_list_contacts(request, metadata)
             pb_request = service.ListContactsRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -761,19 +832,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("SendTestMessage")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.SendTestMessageRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ):
+        def __call__(
+            self,
+            request: service.SendTestMessageRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ):
             r"""Call the send test message method over HTTP.
 
             Args:
@@ -788,56 +864,61 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
                     sent along with the request as metadata.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{resource=projects/*}/contacts:sendTestMessage',
-                'body': '*',
-            },
-{
-                'method': 'post',
-                'uri': '/v1/{resource=folders/*}/contacts:sendTestMessage',
-                'body': '*',
-            },
-{
-                'method': 'post',
-                'uri': '/v1/{resource=organizations/*}/contacts:sendTestMessage',
-                'body': '*',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{resource=projects/*}/contacts:sendTestMessage",
+                    "body": "*",
+                },
+                {
+                    "method": "post",
+                    "uri": "/v1/{resource=folders/*}/contacts:sendTestMessage",
+                    "body": "*",
+                },
+                {
+                    "method": "post",
+                    "uri": "/v1/{resource=organizations/*}/contacts:sendTestMessage",
+                    "body": "*",
+                },
             ]
-            request, metadata = self._interceptor.pre_send_test_message(request, metadata)
+            request, metadata = self._interceptor.pre_send_test_message(
+                request, metadata
+            )
             pb_request = service.SendTestMessageRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -848,19 +929,24 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         def __hash__(self):
             return hash("UpdateContact")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: service.UpdateContactRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> service.Contact:
+        def __call__(
+            self,
+            request: service.UpdateContactRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> service.Contact:
             r"""Call the update contact method over HTTP.
 
             Args:
@@ -881,21 +967,22 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1/{contact.name=projects/*/contacts/*}',
-                'body': 'contact',
-            },
-{
-                'method': 'patch',
-                'uri': '/v1/{contact.name=folders/*/contacts/*}',
-                'body': 'contact',
-            },
-{
-                'method': 'patch',
-                'uri': '/v1/{contact.name=organizations/*/contacts/*}',
-                'body': 'contact',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1/{contact.name=projects/*/contacts/*}",
+                    "body": "contact",
+                },
+                {
+                    "method": "patch",
+                    "uri": "/v1/{contact.name=folders/*/contacts/*}",
+                    "body": "contact",
+                },
+                {
+                    "method": "patch",
+                    "uri": "/v1/{contact.name=organizations/*/contacts/*}",
+                    "body": "contact",
+                },
             ]
             request, metadata = self._interceptor.pre_update_contact(request, metadata)
             pb_request = service.UpdateContactRequest.pb(request)
@@ -904,33 +991,35 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -946,60 +1035,58 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
             return resp
 
     @property
-    def compute_contacts(self) -> Callable[
-            [service.ComputeContactsRequest],
-            service.ComputeContactsResponse]:
+    def compute_contacts(
+        self,
+    ) -> Callable[[service.ComputeContactsRequest], service.ComputeContactsResponse]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ComputeContacts(self._session, self._host, self._interceptor) # type: ignore
+        return self._ComputeContacts(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def create_contact(self) -> Callable[
-            [service.CreateContactRequest],
-            service.Contact]:
+    def create_contact(
+        self,
+    ) -> Callable[[service.CreateContactRequest], service.Contact]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateContact(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateContact(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_contact(self) -> Callable[
-            [service.DeleteContactRequest],
-            empty_pb2.Empty]:
+    def delete_contact(
+        self,
+    ) -> Callable[[service.DeleteContactRequest], empty_pb2.Empty]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteContact(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteContact(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_contact(self) -> Callable[
-            [service.GetContactRequest],
-            service.Contact]:
+    def get_contact(self) -> Callable[[service.GetContactRequest], service.Contact]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetContact(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetContact(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def list_contacts(self) -> Callable[
-            [service.ListContactsRequest],
-            service.ListContactsResponse]:
+    def list_contacts(
+        self,
+    ) -> Callable[[service.ListContactsRequest], service.ListContactsResponse]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ListContacts(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListContacts(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def send_test_message(self) -> Callable[
-            [service.SendTestMessageRequest],
-            empty_pb2.Empty]:
+    def send_test_message(
+        self,
+    ) -> Callable[[service.SendTestMessageRequest], empty_pb2.Empty]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._SendTestMessage(self._session, self._host, self._interceptor) # type: ignore
+        return self._SendTestMessage(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_contact(self) -> Callable[
-            [service.UpdateContactRequest],
-            service.Contact]:
+    def update_contact(
+        self,
+    ) -> Callable[[service.UpdateContactRequest], service.Contact]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateContact(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateContact(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
     def kind(self) -> str:
@@ -1009,6 +1096,4 @@ class EssentialContactsServiceRestTransport(EssentialContactsServiceTransport):
         self._session.close()
 
 
-__all__=(
-    'EssentialContactsServiceRestTransport',
-)
+__all__ = ("EssentialContactsServiceRestTransport",)
